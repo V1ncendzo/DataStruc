@@ -41,7 +41,9 @@ class binary_string
     // Driver Code
     public static void main(String args[])
     {
-        int n = 2;
+        Scanner sc =  new Scanner(System.in);
+        System.out.print("Enter the length of binary string: ");
+        int n = sc.nextInt();
 
         int[] arr = new int[n];
 
