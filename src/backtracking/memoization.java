@@ -1,5 +1,5 @@
-package Back_Tracking;
-
+package backtracking;
+//Based on pseudo code of Mr.Dung
 public class memoization {
     static final int MAX = 100;
     static int[][] m = new int[MAX][MAX];
