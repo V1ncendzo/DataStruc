@@ -1,5 +1,6 @@
 package backtracking;
 // no 2 consecutive bit 1
+// Based on pseudo code of Mr.Dung
 public class binary_string3 {
     static int n = 3;
     static int[] x = new int[n];
