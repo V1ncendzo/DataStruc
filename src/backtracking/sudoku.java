@@ -2,6 +2,7 @@ package backtracking;
 
 public class sudoku {
     static int[][] x = new int[9][9];
+    static int COUNT = 0;
 
     static boolean check(int v, int r, int c) {
         for (int i = 0; i <= r - 1; i++)
@@ -31,7 +32,7 @@ public class sudoku {
     static void solution() {
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
-                System.out.print(x[i][j] + " ");
+                //System.out.print(x[i][j] + " ");
             }
             System.out.println();
         }
@@ -44,6 +45,7 @@ public class sudoku {
                 x[r][c] = v;
                 if (r == 8 && c == 8) {
                     solution();
+                    COUNT += 1;
                 } else {
                     if (c == 8) {
                         TRY(r + 1, 0);
@@ -57,5 +59,6 @@ public class sudoku {
 
     public static void main(String[] args) {
         TRY(0, 0);
+        System.out.println(COUNT);
     }
 }
