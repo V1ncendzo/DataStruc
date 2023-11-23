@@ -1,10 +1,10 @@
 package tree;
 
-public class inorder_traversal {
+public class bin_tree_traverse {
     // Root of Binary Tree
     Node root;
 
-    inorder_traversal() { root = null; }
+    bin_tree_traverse() { root = null; }
 
     // Given a binary tree, print its nodes in inorder
     void printInorder(Node node)
@@ -49,9 +49,19 @@ public class inorder_traversal {
         // Now deal with the node
         System.out.print(node.key + " ");
     }
+    static int count(Node root)
+    {
+        if (root == null)
+            return 0;
+
+        int l = count(root.left);
+        int r = count(root.right);
+
+        return 1 + l + r;
+    }
     public static void main(String[] args)
     {
-        inorder_traversal tree = new inorder_traversal();
+        bin_tree_traverse tree = new bin_tree_traverse();
         tree.root = new Node(1);
         tree.root.left = new Node(2);
         tree.root.right = new Node(3);
@@ -69,5 +79,8 @@ public class inorder_traversal {
         System.out.println();
         System.out.println("Postorder traversal of binary tree is ");
         tree.printPostorder(tree.root);
+        System.out.println();
+        System.out.println("The total nodes of tree is:  " + tree.count(tree.root));
+
     }
 }
